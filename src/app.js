@@ -1,6 +1,8 @@
 import routes from './routes'
 import {resolve} from 'path'
 
+import cors from 'cors'
+
 const express = require('express')
 
 import './database'
@@ -8,7 +10,8 @@ import './database'
 class App {
   constructor () {
     this.app = express()
-
+    
+    this.app.use(cors())
     this.middlewares()
     this.routes()
   }
